@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Content, Text, Header, Item, Title, Subtitle, Button, Left, Right, Body, Icon, List, ListItem, Input } from 'native-base';
 import { connect } from 'react-redux';
-import {loadedList, llistaNomsAcabada} from '../actions';
+import {loadedList, llistaNomsAcabada, fet} from '../actions';
 import {KeyboardAvoidingView} from 'react-native';
 
 
@@ -11,6 +11,7 @@ class SetNames extends Component {
     this.state = {
       llistaNoms: []
     }
+    this.buttonFet = this.buttonFet.bind(this)
   }
 
   componentWillMount() {
@@ -31,6 +32,9 @@ class SetNames extends Component {
       this.props.llistaNomsAcabada(this.state.llistaNoms)
   }
 
+  buttonFet() {
+    this.props.fet()
+  }
 
   render() {
     return(
@@ -42,7 +46,10 @@ class SetNames extends Component {
             <Subtitle style= {styles.subtitleStyle}>Configuració de jugadors</Subtitle>
           </Body>
           <Right>
-            <Button transparent>
+            <Button
+              transparent
+              onPress = {() => this.buttonFet()}
+            >
               <Text> Fet! </Text>
             </Button>
           </Right>
@@ -79,7 +86,7 @@ const styles = {
 }
 
 mapStateToProps = (state) => {
-  console.log(state.appRender)
+  //console.log(state.appRender)
   return {
     jugadors: state.appRender.jugadors,
     rondes: state.appRender.rondes,
@@ -87,4 +94,4 @@ mapStateToProps = (state) => {
     llistaFinal: state.appRender.llistaNomsAcabada
   }
 }
-export default connect(mapStateToProps, {loadedList, llistaNomsAcabada})(SetNames);
+export default connect(mapStateToProps, {loadedList, llistaNomsAcabada, fet})(SetNames);

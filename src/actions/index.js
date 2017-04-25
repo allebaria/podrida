@@ -34,9 +34,23 @@ export const startMatch = (jugadors, rondes) => {
   }
 }
 
+export const fet = () => {
+  return {
+    type: 'fet',
+    payload:''
+  }
+}
+
 export const llistaNomsAcabada = (llistaNoms) => {
   return {
     type: 'llista_noms_acabada',
     payload: llistaNoms
+  }
+}
+
+export const generarColumnes = (columns) => {
+  return {
+    type:'generar_columnes',
+    payload: columns
   }
 }

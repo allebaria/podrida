@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
   partidaCom:false,
   jugadors:0,
-  rondes:0
+  rondes:0,
+  columnes: []
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -19,7 +20,20 @@ export default (state = INITIAL_STATE, action) => {
         dictJugadors:action.payload
       }
     case 'llista_noms_acabada':
-      return {...state, llistaNomsAcabada: action.payload}
+      return {
+        ...state,
+        llistaNomsAcabada: action.payload
+      }
+    case 'fet':
+      return {
+        ...state,
+        partidaCom: 'nomsFets'
+      }
+    case 'generar_columnes':
+      return {
+        ...state,
+        columnes: action.payload
+      }
 
     default:
       return state;
