@@ -48,7 +48,7 @@ class StartView extends Component {
             maximumValue = {200}
             valueChanged = {this.valueChanged}
           />
-        <Text style = {styles.titlesStyle}>Fins a quina ronda vol arribar?? (màxim fins a la ronda {this.props.maxRound}): </Text>
+        <Text style = {styles.titlesStyle}>Fins a quina ronda vol arribar? (màxim fins a la ronda {this.props.maxRound}): </Text>
         <Text style= {styles.numberStyle}>{this.props.numRound}</Text>
         <SimpleStepper
           initialValue = {0}

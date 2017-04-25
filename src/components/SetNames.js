@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Content, Header, Item, Title, Subtitle, Button, Left, Right, Body, Icon, List, ListItem, Input } from 'native-base';
+import { Container, Content, Text, Header, Item, Title, Subtitle, Button, Left, Right, Body, Icon, List, ListItem, Input } from 'native-base';
 import { connect } from 'react-redux';
 import {loadedList, llistaNomsAcabada} from '../actions';
-import {Text, KeyboardAvoidingView} from 'react-native';
+import {KeyboardAvoidingView} from 'react-native';
 
 
 class SetNames extends Component {
@@ -41,7 +41,11 @@ class SetNames extends Component {
             <Title>La podrida</Title>
             <Subtitle style= {styles.subtitleStyle}>Configuració de jugadors</Subtitle>
           </Body>
-          <Right/>
+          <Right>
+            <Button transparent>
+              <Text> Fet! </Text>
+            </Button>
+          </Right>
         </Header>
         <KeyboardAvoidingView behavior = 'padding' sytle = {styles.KeyboardAvodingStyle}>
           <List dataArray={this.props.dictJugadors} renderRow={(data) =>
