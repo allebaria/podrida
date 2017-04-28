@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import {View, Text} from 'react-native';
 import SetNames from './SetNames';
 import TaulaPuntuacions from './TaulaPuntuacions';
+import SetPoints from './SetPoints';
 
 class ConditionalRenderingManager extends Component {
 
@@ -20,7 +21,7 @@ class ConditionalRenderingManager extends Component {
         )
       case 'nomsFets':
         return(
-            <TaulaPuntuacions/>
+            <SetPoints/>
         )
       default:
         return(

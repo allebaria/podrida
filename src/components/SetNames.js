@@ -85,7 +85,7 @@ const styles = {
   }
 }
 
-mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   //console.log(state.appRender)
   return {
     jugadors: state.appRender.jugadors,

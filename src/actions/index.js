@@ -54,3 +54,17 @@ export const generarColumnes = (columns) => {
     payload: columns
   }
 }
+
+export const ferLlistaRondes = (llistaRondes) => {
+  return {
+    type:'generar_llista_rondes',
+    payload: llistaRondes
+  }
+}
+
+export const canviDeRonda = (novaRonda) => {
+  return {
+    type:'canvi_de_ronda',
+    payload: novaRonda
+  }
+}

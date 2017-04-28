@@ -38,7 +38,8 @@ class TaulaPuntuacions extends Component {
 const styles = {
   containerStyle: {
     paddingTop: 20,
-    alignItems: 'center'
+    alignItems: 'center',
+    flex:1
   }
 }
 

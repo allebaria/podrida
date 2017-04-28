@@ -2,7 +2,9 @@ const INITIAL_STATE = {
   partidaCom:false,
   jugadors:0,
   rondes:0,
-  columnes: []
+  columnes: [],
+  currentRound: "Ronda 1",
+  llistaRondes: []
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -35,6 +37,16 @@ export default (state = INITIAL_STATE, action) => {
         columnes: action.payload
       }
 
+    case 'generar_llista_rondes':
+      return {
+        ...state,
+        llistaRondes:action.payload
+      }
+    case 'canvi_de_ronda':
+    return {
+      ...state,
+      currentRound: action.payload
+    }
     default:
       return state;
 
